@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import joblib
-import requests, os
+import gdown, os
 import pandas as pd
 from flask_cors import CORS
 
@@ -10,18 +10,14 @@ CORS(app) # Allows requests from react frontend
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1PcucFOxs6zNvqoWsiCIeAFTXaygCEyVF&confirm=t"
 PIPELINE_URL = "https://drive.google.com/uc?export=download&id=13V3RmCWgn1XRTc6edgN1XtLQchr3dQHP&confirm=t"
 
-def download_file(url, filename):
-    response = requests.get(url)
-    response.raise_for_status()
-    with open(filename, "wb") as f:
-        f.write(response.content)
-
 # Download model and pipline if not exist
 if not os.path.exists("model.pkl"):
-    download_file(MODEL_URL, "model.pkl")
+    print("Downloading model.pkl ...")
+    gdown.download(MODEL_URL, "model.pkl", quiet=False)
 
 if not os.path.exists("pipeline.pkl"):
-    download_file(PIPELINE_URL, "pipeline.pkl")
+    print("Downloading pipeline.pkl ...")
+    gdown.download(PIPELINE_URL, "pipeline.pkl", quiet=False)
 
 # Load the model and pipeline
 model = joblib.load("./model.pkl")
