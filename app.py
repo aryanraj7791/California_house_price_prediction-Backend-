@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) # Allows requests from react frontend
 
-MODEL_URL = "https://drive.google.com/uc?export=download&id=10WQt1AEH3yvyJbmq5bqfwCnbtxcTL4u_&confirm=t"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1PcucFOxs6zNvqoWsiCIeAFTXaygCEyVF&confirm=t"
 PIPELINE_URL = "https://drive.google.com/uc?export=download&id=13V3RmCWgn1XRTc6edgN1XtLQchr3dQHP&confirm=t"
 
 def download_file(url, filename):
