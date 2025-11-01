@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app) # Allows requests from react frontend
 
 MODEL_URL = "https://drive.google.com/uc?export=download&id=10WQt1AEH3yvyJbmq5bqfwCnbtxcTL4u_&confirm=t"
-PIPELINE_URL = "https://drive.google.com/uc?export=download&id=1ia4MSIjEPx0D4S5eKCvO1ZnIn8WogHubk"
+PIPELINE_URL = "https://drive.google.com/uc?export=download&id=1ia4MSIjEPx0D4S5eKCvO1ZnIn8WogHubk&confirm=t"
 
 def download_file(url, filename):
     response = requests.get(url)
