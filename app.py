@@ -1,10 +1,28 @@
 from flask import Flask, request, jsonify
 import joblib
+import requests
+import os
 import pandas as pd
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app) # Allows requests from react frontend
+
+MODEL_URL = "https://drive.google.com/uc?export=download&id=10WQt1AEH3yvyJbmq5bqfwCnbtxcTL4u_&confirm=t"
+PIPELINE_URL = "https://drive.google.com/uc?export=download&id=1ia4MSlEgXOd43SEkCoV1zInn8WoghUkb&confirm=t"
+
+def download_file(url, filename):
+    response = requests.get(url)
+    response.raise_for_status()
+    with open(filename, "wb") as f:
+        f.write(response.content)
+
+# Download model and pipeline if not present
+if not os.path.exists("model.pkl"):
+    download_file(MODEL_URL, "model.pkl")
+
+if not os.path.exists("pipeline.pkl"):
+    download_file(PIPELINE_URL, "pipeline.pkl")
 
 # Load the model and pipeline
 model = joblib.load("./model.pkl")
