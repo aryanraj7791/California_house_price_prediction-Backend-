@@ -13,7 +13,7 @@ PIPELINE_URL = "https://drive.google.com/uc?export=download&id=1ia4MSlEgXOd43SEk
 
 def download_file(url, filename):
     response = requests.get(url)
-    response.raise_for_status
+    response.raise_for_status()
     with open(filename, "wb") as f:
         f.write(response.content)
 
