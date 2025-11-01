@@ -19,7 +19,7 @@ def download_file(url, filename):
 
 # Download model and pipeline if not present
 if not os.path.exists("model.pkl"):
-    download_file(MODEL_FILE, "model.pkl")
+    download_file(MODEL_URL, "model.pkl")
 
 if not os.path.exists("pipeline.pkl"):
     download_file(PIPELINE_URL, "pipeline.pkl")
