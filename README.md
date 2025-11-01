@@ -17,7 +17,7 @@ Algorithm Used: Random Forest Regressor
 
 Model Selection: The Random Forest Regressor was chosen after evaluating multiple regression models, including Decision Tree Regressor and Linear Regressor, based on the mean of RMSE scores obtained through cross-validation.
 
-Dataset: California Housing Dataset (from Scikit-learn or Kaggle)
+Dataset: California Housing Dataset (from OpenML)
 
 Objective: Predict median house value based on numerical and categorical features.
 
@@ -31,7 +31,7 @@ pipeline.pkl → Preprocessing pipeline (handles scaling, encoding, transformati
 
 Add user authentication and query history.
 
-Integrate database logging (MongoDB / PostgreSQL).
+Integrate database logging (MongoDB / MySQL).
 
 Implement MLOps for retraining and continuous model improvement.
 
