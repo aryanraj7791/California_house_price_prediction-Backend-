@@ -40,7 +40,7 @@ Containerize with Docker for scalable deployment.
 ## Backend Link
 Link : https://california-house-price-prediction-r5y6.onrender.com
 
-### Author
+## Author
 
 #### Aryan Raj
 Data Science | Machine Learning | Full Stack Developer
